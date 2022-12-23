@@ -88,7 +88,7 @@ ul {
     letter-spacing: 0.02em;
     color: var(--dark-theme);
     text-decoration: none;
-    padding: 24px 0px;
+    padding: 24px 0 0 0;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -132,10 +132,21 @@ ul {
 .contact-link:hover, .contact-link:focus {
     color: var(--blue-theme);
 } 
-.st-act {
+.act-page {
     color: var(--blue-theme);
 }
+.act-page::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    left: 0;
+    margin-top: 24px;
+    background-color: var(--blue-theme);
+    border-radius: 2px;
+    
 
+}
 
 /* hero styles */
 
@@ -401,27 +412,35 @@ ul {
   justify-content: center;
   margin: 0 auto;
 }
-
 .cust-link {
-    display: block;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
     color:  var(--icon-gr);
     border: 1px solid #8E8F99;
     border-radius: 4px;
-    align-items: center;
-    justify-content: center;
-
+    padding: 16px 0;      
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 
 }
  .cust-link:hover, .cust-link:focus {
     border-color: var(--dark-blue); 
     color: var(--dark-blue);   
 }
+.customers-item {
+    display: block;
 
+    width: calc((100% - 120px) / 6);
+       
+
+   
+}
  .cust-icon {
-    padding: 16px 32px;
-    fill: currentColor;
+        fill: currentColor;
  }
 
 .customers-item:not(:last-child) {
@@ -510,9 +529,7 @@ footer h3 {
     padding-top: 96px;
     padding-bottom: 120px;
 }
-.port-act {
-    color: var(--blue-theme);
-}
+
 .port-cont {
     box-sizing: content-box;
 }
